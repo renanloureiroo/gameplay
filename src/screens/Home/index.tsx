@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View } from 'react-native'
+import { View, Text } from 'react-native'
 import { ButtonAdd } from '../../components/ButtonAdd'
 import { CategorySelect } from '../../components/CategorySelect'
 
@@ -20,11 +20,18 @@ export const Home = () => {
         <ButtonAdd />
       </View>
 
-      <View style={styles.categories}>
+      <View>
         <CategorySelect
           categorySelected={category}
           setCategory={handleCategorySelect}
         />
+      </View>
+
+      <View style={styles.content}>
+        <View style={styles.contentInfo}>
+          <Text style={styles.title}>Partidas agendadas</Text>
+          <Text style={styles.total}>Total 6</Text>
+        </View>
       </View>
     </View>
   )
